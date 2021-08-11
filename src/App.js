@@ -7,14 +7,14 @@ import Photo from "./components/Photo"
 
 function App() {
   const [nasa, setNasa] = useState([])
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState([]);
 
-  console.log(date)
+  // console.log(date)
   // &date=${date} 
  
   useEffect(() => {
     const fetchNasa = () => {
-      axios.get(`${BASE_URL}/apod?api_key=${API_KEY}`)
+      axios.get(`${BASE_URL}/apod?api_key=${API_KEY}&date=${date}`)
       .then(res => {
         // console.log(res.data)
         setNasa(res.data)
@@ -24,12 +24,13 @@ function App() {
       })
     }
     fetchNasa()
-  }, [])
+  }, [date])
+
 
   const changeDate = e => {
     e.preventDefault()
     let dateFromInput = e.target[0].value
-    setDate({ date: dateFromInput })
+    setDate(dateFromInput)
   }
  
 
