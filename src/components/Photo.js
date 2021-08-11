@@ -7,6 +7,7 @@ const Photo = props => {
         <div>
             <h2>{nasa.title}</h2>
             <img src={nasa.hdurl} alt={nasa.title} width='500' height='500'/>
+            <h4>{nasa.date}</h4>
             <p>{nasa.explanation}</p>
         </div>
     )
