@@ -15,9 +15,11 @@ const DateInput = props => {
 
     return (
     <StyledDate>
+        Select a Date:
         <DatePicker 
         onChange={date => changeDate(date)} 
-        placeholderText= 'Select A Date'
+        // placeholderText= 'Select A Date'
+        popperPlacement='bottom'
         />
     </StyledDate>
       );

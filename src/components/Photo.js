@@ -13,8 +13,8 @@ img {
     width: 50%;
     height: 50%;
     border-radius: 2%;
+    box-shadow: 3px 5px 5px 3px rgb(128, 127, 127);
 }
-
 `;
 
 const StyledContent = styled.div`
@@ -31,10 +31,7 @@ h6 {
     padding-bottom: 2%;
 }
 
-
 `;
-
-
 
 const Photo = props => {
     const { nasa } = props

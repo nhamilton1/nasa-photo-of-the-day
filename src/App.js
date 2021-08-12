@@ -4,7 +4,6 @@ import { BASE_URL, API_KEY } from "./constants/index"
 import axios from "axios";
 import DateInput from "./components/DateInput"
 import Photo from "./components/Photo"
-// import Details from "./components/Details";
 import styled from 'styled-components';
 import moment from "moment";
 
@@ -21,8 +20,7 @@ h1 {
 `;
 
 const StyledFooter = styled.footer`
-    
-  
+     
 color: lightgrey;
 text-align: right;
 
