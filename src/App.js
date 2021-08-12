@@ -4,19 +4,19 @@ import { BASE_URL, API_KEY } from "./constants/index"
 import axios from "axios";
 import DateInput from "./components/DateInput"
 import Photo from "./components/Photo"
+// import Details from "./components/Details";
+import styled from 'styled-components';
+
+
 
 function App() {
   const [nasa, setNasa] = useState([])
   const [date, setDate] = useState([]);
-
-  // console.log(date)
-  // &date=${date} 
  
   useEffect(() => {
     const fetchNasa = () => {
       axios.get(`${BASE_URL}/apod?api_key=${API_KEY}&date=${date}`)
       .then(res => {
-        // console.log(res.data)
         setNasa(res.data)
       })
       .catch(err => {
@@ -33,13 +33,27 @@ function App() {
     setDate(dateFromInput)
   }
  
+  const StyledMain = styled.div`
+    text-align: center;
+    box-sizing: border-box;
+    margin: 20px;
+
+    h1 {
+      font-size: ${pr => pr.theme.fontSize};
+      padding: 10px;
+    }
+  `;
+
+  const StyledTopOfPage = styled.h1`
+
+  `;
 
   return (
-    <div className="App">
-      <h1>NASA's Astronomy Picture of the Day!</h1>
-      <DateInput changeDate={changeDate}/>
+    <StyledMain>
+        <h1>NASA's Astronomy Picture of the Day!</h1>
+        <DateInput changeDate={changeDate}/>
       <Photo nasa={nasa}/>
-    </div>
+    </StyledMain>
   );
 }
 
