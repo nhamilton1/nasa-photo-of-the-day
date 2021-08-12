@@ -7,12 +7,17 @@ import moment from "moment";
 
 const StyledDate = styled.div`
 text-align: center;
+font-weight: bold;
+color: #0B3D91;
+
+    input {
+        text-align: center;
+    }
 `;
 
 const DateInput = props => {
     const { changeDate, date } = props
 
-    const [StartDate, setStartDate] = useState(new Date())
 
     console.log(date)
 
@@ -20,10 +25,8 @@ const DateInput = props => {
     <StyledDate>
         Select a Date:
         <DatePicker 
-        selected={StartDate}
         value={moment(date).format('MMMM Do, YYYY')}
         onChange={date => changeDate(date)} 
-        // placeholderText= 'Select A Date'
         popperPlacement='bottom'
         />
     </StyledDate>
