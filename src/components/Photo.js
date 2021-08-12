@@ -24,13 +24,17 @@ padding: 3%;
 h2 {
     font-size: 3rem;
     padding-bottom: 10px;
+    text-align: center;
 }
 
 h6 {
     padding-bottom: 2%;
-    
 }
+
+
 `;
+
+
 
 const Photo = props => {
     const { nasa } = props

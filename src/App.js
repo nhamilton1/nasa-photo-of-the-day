@@ -9,14 +9,23 @@ import styled from 'styled-components';
 import moment from "moment";
 
 const StyledMain = styled.div`
-text-align: center;
 box-sizing: border-box;
 margin: 20px;
 
 h1 {
   font-size: ${pr => pr.theme.fontSize};
   padding: 10px;
+  width: 100%;
+  text-align: center;
 }
+`;
+
+const StyledFooter = styled.footer`
+    
+  
+color: lightgrey;
+text-align: right;
+
 `;
 
 
@@ -41,12 +50,16 @@ function App() {
   const changeDate = dateFromInput => {
     setDate(moment(dateFromInput).format("YYYY-MM-DD"))
   }
+
  
   return (
     <StyledMain>
         <h1>NASA's Astronomy Picture of the Day!</h1>
-        <DateInput changeDate={changeDate} />
-        <Photo nasa={nasa} date={nasa.date}/>
+        <DateInput changeDate={changeDate} date={nasa.date}/>
+        <Photo nasa={nasa} />
+        <StyledFooter>
+          <p>©{nasa.copyright}</p>
+        </StyledFooter>
     </StyledMain>
   );
 }
