@@ -4,8 +4,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
+
 const DateInput = props => {
-    const { changeDate, date } = props
+    const { changeDate } = props
 
     return (
         <DatePicker 

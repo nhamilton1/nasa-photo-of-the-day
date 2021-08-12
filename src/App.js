@@ -8,7 +8,16 @@ import Photo from "./components/Photo"
 import styled from 'styled-components';
 import moment from "moment";
 
+const StyledMain = styled.div`
+text-align: center;
+box-sizing: border-box;
+margin: 20px;
 
+h1 {
+  font-size: ${pr => pr.theme.fontSize};
+  padding: 10px;
+}
+`;
 
 
 function App() {
@@ -32,20 +41,7 @@ function App() {
   const changeDate = dateFromInput => {
     setDate(moment(dateFromInput).format("YYYY-MM-DD"))
   }
-
-
  
-  const StyledMain = styled.div`
-    text-align: center;
-    box-sizing: border-box;
-    margin: 20px;
-
-    h1 {
-      font-size: ${pr => pr.theme.fontSize};
-      padding: 10px;
-    }
-  `;
-
   return (
     <StyledMain>
         <h1>NASA's Astronomy Picture of the Day!</h1>
