@@ -1,17 +1,18 @@
 import React from "react";
 import styled from 'styled-components';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 const DateInput = props => {
-    const { changeDate } = props
+    const { changeDate, date } = props
 
     return (
-        <form onSubmit={changeDate}>
-            Pick a date (YYYY-MM-DD): 
-            <input />
-            <input type="submit"/>
-        </form>
-    )
+        <DatePicker 
+        onChange={date => changeDate(date)} 
+        placeholderText= 'Select A Date'
+        />
+      );
 }
 
 

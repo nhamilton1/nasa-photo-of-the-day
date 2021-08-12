@@ -6,6 +6,8 @@ import DateInput from "./components/DateInput"
 import Photo from "./components/Photo"
 // import Details from "./components/Details";
 import styled from 'styled-components';
+import moment from "moment";
+
 
 
 
@@ -27,11 +29,11 @@ function App() {
   }, [date])
 
 
-  const changeDate = e => {
-    e.preventDefault()
-    let dateFromInput = e.target[0].value
-    setDate(dateFromInput)
+  const changeDate = dateFromInput => {
+    setDate(moment(dateFromInput).format("YYYY-MM-DD"))
   }
+
+
  
   const StyledMain = styled.div`
     text-align: center;
@@ -44,15 +46,11 @@ function App() {
     }
   `;
 
-  const StyledTopOfPage = styled.h1`
-
-  `;
-
   return (
     <StyledMain>
         <h1>NASA's Astronomy Picture of the Day!</h1>
-        <DateInput changeDate={changeDate}/>
-      <Photo nasa={nasa}/>
+        <DateInput changeDate={changeDate} />
+        <Photo nasa={nasa} date={nasa.date}/>
     </StyledMain>
   );
 }

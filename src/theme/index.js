@@ -1,3 +1,3 @@
 export default {
-    fontSize: '1rem'
+    fontSize: '2rem'
 }
